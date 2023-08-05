@@ -1,0 +1,917 @@
+{
+	"info": {
+		"_postman_id": "513b5250-4ac5-4eb9-800e-f5ff2473c969",
+		"name": "twon-team-online-store",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15860682"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "New Request",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\" : \"test\",\r\n  \"email\": \"ahmedhossamtest6417@gmail.com\",\r\n  \"password\": \"ahmed#1710\",\r\n  \"passwordConfirm\": \"ahmed#1710\"\r\n  \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://[::1]:3000/api/user/register",
+							"protocol": "http",
+							"host": [
+								"[::1]"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YzZlMjAwOWIwOWFhNjRiNjBmY2IyZSIsImlhdCI6MTY5MDc1NTU4NSwiZXhwIjoxNjk4NTMxNTg1fQ.7L0JfuE8yGXH_yvjd3hE57461st9eT0hqiO6QgAfC1Y",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n \"email\": \"ahmedhossam6417@gmail.com\",\r\n  \"password\": \"alsaeed#17108646\"\r\n\r\n  \r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://[::1]:3000/api/user/login",
+							"protocol": "http",
+							"host": [
+								"[::1]"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllUsers",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YzZlMjAwOWIwOWFhNjRiNjBmY2IyZSIsImlhdCI6MTY5MDc5Njg4MiwiZXhwIjoxNjk4NTcyODgyfQ.-ukgQInpY9IFTvbBb8GmpamOhZTQeZL_e-FqhdqcdZ4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://[::1]:3000/api/user/",
+							"protocol": "http",
+							"host": [
+								"[::1]"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getSingleUser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YzJiYWEyYjc1MjA2NjY3ZjIxYzRjZSIsImlhdCI6MTY5MDQ4MzQ0NCwiZXhwIjoxNjk4MjU5NDQ0fQ._JR5iHUZ7U8Mp7Tl3naHzqcWFJtdPqLNEKM_7BHRwHk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://[::1]:3000/api/user/64c2baa2b75206667f21c4ce",
+							"protocol": "http",
+							"host": [
+								"[::1]"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"64c2baa2b75206667f21c4ce"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteUser",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://[::1]:3000/api/user/64c26d1c2e794266a61210c1",
+							"protocol": "http",
+							"host": [
+								"[::1]"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"64c26d1c2e794266a61210c1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateUser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YzI5ZGRkYzQ0NGM3NGRjYzhmN2MyOCIsImlhdCI6MTY5MDQ3NjExNCwiZXhwIjoxNjk4MjUyMTE0fQ.l-a1LbA6b01Xd_YH1oBf0IZ1TLksCa4dEAZbS09pe-o",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\" : \"abdalla saeed\",\r\n  \"email\": \"sabdalla456@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://[::1]:3000/api/user/64c290dcb32f01e0be46f6d7",
+							"protocol": "http",
+							"host": [
+								"[::1]"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"64c290dcb32f01e0be46f6d7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "blockUser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YzJiYWEyYjc1MjA2NjY3ZjIxYzRjZSIsImlhdCI6MTY5MDQ4MzQ0NCwiZXhwIjoxNjk4MjU5NDQ0fQ._JR5iHUZ7U8Mp7Tl3naHzqcWFJtdPqLNEKM_7BHRwHk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://[::1]:3000/api/user/block-user/64c2bb293ebde46e275ef19e",
+							"protocol": "http",
+							"host": [
+								"[::1]"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"block-user",
+								"64c2bb293ebde46e275ef19e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "forgotPassword",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"ahmedhossam6417@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://[::1]:3000/api/user/forgotpassword",
+							"protocol": "http",
+							"host": [
+								"[::1]"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"forgotpassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "unblockUser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YzJiYWEyYjc1MjA2NjY3ZjIxYzRjZSIsImlhdCI6MTY5MDQ4MzQ0NCwiZXhwIjoxNjk4MjU5NDQ0fQ._JR5iHUZ7U8Mp7Tl3naHzqcWFJtdPqLNEKM_7BHRwHk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://[::1]:3000/api/user/unblock-user/64c2bb293ebde46e275ef19e",
+							"protocol": "http",
+							"host": [
+								"[::1]"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"unblock-user",
+								"64c2bb293ebde46e275ef19e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "resetPassword",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \r\n  \"password\": \"alsaeed#17108646\",\r\n  \"passwordConfirm\": \"alsaeed#17108646\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://[::1]:3000/api/user/resetpassword/d5c5b8c7c2e81764a351c16852844d0e3b0da7ab698989229bd7df272b1778da",
+							"protocol": "http",
+							"host": [
+								"[::1]"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"resetpassword",
+								"d5c5b8c7c2e81764a351c16852844d0e3b0da7ab698989229bd7df272b1778da"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateMyPassword",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YzNjMjA2OGMxOWQ0ZDZlMTI2YzEwYiIsImlhdCI6MTY5MDcwODQ0NiwiZXhwIjoxNjk4NDg0NDQ2fQ.2Cfg9XR1r7qU4kbyPYsuYXy8fDmKWL16fKQ8aAxw3fc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"passwordCurrent\": \"alsaeed#17108646\",\r\n    \"password\":\"alsaeed1710\",\r\n    \"passwordConfirm\":\"alsaeed1710\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://[::1]:3000/api/user/updateMyPassword",
+							"protocol": "http",
+							"host": [
+								"[::1]"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"updateMyPassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "loginAdmin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"ahmedhossam6417@gmail.com\",\r\n    \"password\": \"alsaeed#17108646\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://[::1]:3000/api/user/loginAdmin",
+							"protocol": "http",
+							"host": [
+								"[::1]"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"loginAdmin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateMe",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YzNjMjA2OGMxOWQ0ZDZlMTI2YzEwYiIsImlhdCI6MTY5MDcwODQ0NiwiZXhwIjoxNjk4NDg0NDQ2fQ.2Cfg9XR1r7qU4kbyPYsuYXy8fDmKWL16fKQ8aAxw3fc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"abdalla\",\r\n    \"role\" : \"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://[::1]:3000/api/user/updateme",
+							"protocol": "http",
+							"host": [
+								"[::1]"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"updateme"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteMe",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YzNjMjA2OGMxOWQ0ZDZlMTI2YzEwYiIsImlhdCI6MTY5MDcwODQ0NiwiZXhwIjoxNjk4NDg0NDQ2fQ.2Cfg9XR1r7qU4kbyPYsuYXy8fDmKWL16fKQ8aAxw3fc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://[::1]:3000/api/user/deletMe",
+							"protocol": "http",
+							"host": [
+								"[::1]"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"deletMe"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "wishlist",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YzZlMjAwOWIwOWFhNjRiNjBmY2IyZSIsImlhdCI6MTY5MDk4MjgzNCwiZXhwIjoxNjk4NzU4ODM0fQ.EchmjwjayRDQP-lEheLZ4J7A6Nlm-O7k6H0hhWS_ksw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://[::1]:3000/api/user/wishList",
+							"protocol": "http",
+							"host": [
+								"[::1]"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"wishList"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "saveAdress",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YzZlMjAwOWIwOWFhNjRiNjBmY2IyZSIsImlhdCI6MTY5MDk4MjgzNCwiZXhwIjoxNjk4NzU4ODM0fQ.EchmjwjayRDQP-lEheLZ4J7A6Nlm-O7k6H0hhWS_ksw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"address\":\"mu address\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://[::1]:3000/api/user/saveAddress",
+							"protocol": "http",
+							"host": [
+								"[::1]"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"saveAddress"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "card",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YzZlMjAwOWIwOWFhNjRiNjBmY2IyZSIsImlhdCI6MTY5MDk4MjgzNCwiZXhwIjoxNjk4NzU4ODM0fQ.EchmjwjayRDQP-lEheLZ4J7A6Nlm-O7k6H0hhWS_ksw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cart\":[\r\n       { \"_id\":\"64c7966cccfa903fdc8da5ea\",\r\n        \"count\": \"2\"\r\n        \r\n        \r\n        },\r\n       { \"_id\":\"64c7966cccfa903fdc8da5ea\",\r\n        \"count\": \"2\"\r\n        \r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://[::1]:3000/api/user/cart",
+							"protocol": "http",
+							"host": [
+								"[::1]"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"cart"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "product",
+			"item": [
+				{
+					"name": "createProduct",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\" : \"t shert\",\r\n    \"price\": \"250\",\r\n    \"description\": \" nvnbbjh vghuu mkmjhuhu\",\r\n    \"category\" : \"bant\",\r\n    \"quantity\":200,\r\n    \"color\":\"yellow\",\r\n    \"rating\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://[::1]:3000/api/product",
+							"protocol": "http",
+							"host": [
+								"[::1]"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllProdect",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://[::1]:3000/api/product",
+							"protocol": "http",
+							"host": [
+								"[::1]"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getSingleProduct",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://[::1]:3000/api/product/64c7966cccfa903fdc8da5ea",
+							"protocol": "http",
+							"host": [
+								"[::1]"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"product",
+								"64c7966cccfa903fdc8da5ea"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteProduct",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://[::1]:3000/api/product/64c7966cccfa903fdc8da5ea",
+							"protocol": "http",
+							"host": [
+								"[::1]"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"product",
+								"64c7966cccfa903fdc8da5ea"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateProduct",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"tt shert\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://[::1]:3000/api/product/64c7966cccfa903fdc8da5ea",
+							"protocol": "http",
+							"host": [
+								"[::1]"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"product",
+								"64c7966cccfa903fdc8da5ea"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addToWishList",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YzZlMjAwOWIwOWFhNjRiNjBmY2IyZSIsImlhdCI6MTY5MDkzNzQ0MSwiZXhwIjoxNjk4NzEzNDQxfQ.JyqvM0a3IE4BF1uD7p82DlqD50da5N3hCGmy1S3ENSc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"prodId\":\"64c79914ef39411cc84022d3\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://[::1]:3000/api/product/wishlist",
+							"protocol": "http",
+							"host": [
+								"[::1]"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"product",
+								"wishlist"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "rating",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YzliMjk5MWNmNjBjMTM5NzYwNDU1ZSIsImlhdCI6MTY5MDk0MDA1OCwiZXhwIjoxNjk4NzE2MDU4fQ.qtTD7T1aeBS7XscVpFFAaeGZY-N_qpP2MWNHDXHo144",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"star\":1,\r\n    \"prodId\":\"64c79914ef39411cc84022d3\",\r\n    \"comment\":\"great\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://[::1]:3000/api/product/rating",
+							"protocol": "http",
+							"host": [
+								"[::1]"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"product",
+								"rating"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "category",
+			"item": [
+				{
+					"name": "createCategory",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"short\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://[::1]:3000/api/category",
+							"protocol": "http",
+							"host": [
+								"[::1]"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"category"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateCategory",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"bants\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://[::1]:3000/api/category/64c9112321edc04d96e08013",
+							"protocol": "http",
+							"host": [
+								"[::1]"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"category",
+								"64c9112321edc04d96e08013"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deletCategory",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://[::1]:3000/api/category/64c9112321edc04d96e08013",
+							"protocol": "http",
+							"host": [
+								"[::1]"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"category",
+								"64c9112321edc04d96e08013"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getSingleCategory",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://[::1]:3000/api/category/64c9127202cfbed9f5365bf7",
+							"protocol": "http",
+							"host": [
+								"[::1]"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"category",
+								"64c9127202cfbed9f5365bf7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllCategory",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://[::1]:3000/api/category",
+							"protocol": "http",
+							"host": [
+								"[::1]"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"category"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

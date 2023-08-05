@@ -1,0 +1,78 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+:root {
+    --main-color: #000000;
+    --secondary-color:#fff;
+    --hover-color: rgb(252, 12, 24);
+    --main-padding:0 3.5rem;
+}
+header {
+    width: 100%;
+    height: 5rem;
+    padding: var(--main-padding);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+
+}
+header .bars {
+    display: none;
+    cursor: pointer;
+}
+header nav ul a{
+    display: inline-block;
+    padding: 1rem;
+    color: var(--secondary-color);
+    text-transform: capitalize;
+    counter-increment: var(--secondary-color);
+    cursor: pointer;
+}
+header nav ul a:hover {
+    color: var(--hover-color);
+}
+header .icons i{
+    color:var(--secondary-color);
+    padding: 0.5rem;
+}
+@media (max-width:992px) {
+   header {
+    padding: 1rem;
+    flex-direction: row-reverse;
+   } 
+   header .bars {
+        display: inline-block;
+        color: var(--secondary-color);
+        font-size: 1.3rem;
+       }
+   header nav {
+    display: block;
+    position: absolute;
+    padding: var(--main-padding);
+    width: 100%;
+    top:5rem;
+    left: 0;
+    background-color:var(--main-color);
+   }
+   header nav ul a {
+    display: block;
+    padding: 1rem 0;
+    font-size: 1.5rem;
+   }
+   header nav ul a:hover {
+    background-color: var(--hover-color);
+    color: var(--secondary-color);
+   }
+   .togle {
+    display: none;
+}
+   
+   .icons {
+    font-size: 1.3rem;
+    padding: 0.1rem;
+   } 
+}
