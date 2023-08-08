@@ -11,6 +11,10 @@ const register = async(name,email,password,passwordConfirm)=>{
             }
         });
         console.log(res);
+        if (res.data.status === 'success');{
+            window.location.replace('/ONLINE-STORE/twon-team-clone/frontEnd/login.html')
+        }
+       
     }catch(err){
         console.log(err.response.data)
     }

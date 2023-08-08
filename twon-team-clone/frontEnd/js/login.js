@@ -9,7 +9,9 @@ const login = async(email,password)=>{
             }
         });
         if(res.data.status=== 'success'){
-           window.location.replace('/twon-team-store/twon-team-clone/frontEnd/TownTeamClone/index.html');
+           window.setTimeout(()=>{
+            window.location.replace('/ONLINE-STORE/twon-team-clone/frontEnd/index.html');
+           },1500);
         }
         console.log(res);
     }catch(err){

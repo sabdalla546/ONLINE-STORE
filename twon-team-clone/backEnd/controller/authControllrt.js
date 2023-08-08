@@ -143,18 +143,20 @@ exports.protect = catchAsync(async (req, res, next) => {
     //console.log(resetToken)
     await user.save({ validateBeforeSave: false });
     const restURL = `${req.protocol}://${req.get('host')}/api/user/resetpassword/${resetToken}`;
-    const message = `Forgot your password? Submit a PATCH request with your new password and passwordConfirm to: ${restURL}.\nIf you didn't forget your password, please ignore this email!`;
+    //const message = `Forgot your password? Submit a PATCH request with your new password and passwordConfirm <a href="">click here</a> to: ${restURL}.\nIf you didn't forget your password, please ignore this email!`;
+    const message =  `Hi, Please follow this link to reset Your Password. This link is valid till 10 minutes from now. <a href='http://127.0.0.1:5501/ONLINE-STORE/twon-team-clone/frontEnd/resetPass.html'> Click Here </a>`
     console.log(restURL)
     try {
       await sendEmail({
         email: user.email,
         subject: 'Your password reset token (valid for 10 min)',
-        message
+        htm:message
       });
   
       res.status(200).json({
         status: 'success',
-        message: 'Token sent to email!'
+        message: 'Token sent to email!',
+        resetToken
       });
     } catch (err) {
       user.passwordResetToken = undefined;
