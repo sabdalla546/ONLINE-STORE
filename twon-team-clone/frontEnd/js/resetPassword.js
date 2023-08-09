@@ -65,13 +65,9 @@ console.log(resetbtn);
 resetbtn.addEventListener('click',_ =>{
   const RestPass = document.getElementById('RestPass').value ;
   const confirmPass = document.getElementById('confirmPass').value ;
-  //console.log(RestPass)
+
   sendToken(RestPass,confirmPass,localStorage.getItem('token'));
-  /*(async ()=>{
-     const token = await resetPassword();
-     sendToken(RestPass,confirmPass,token);
-  })()*/
- 
-})
+
+});
 
 

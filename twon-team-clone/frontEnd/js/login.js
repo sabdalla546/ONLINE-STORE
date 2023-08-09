@@ -26,3 +26,19 @@ document.getElementById('login').addEventListener('click',e =>{
     login(email,password)
 });
 
+const loginGoogle = async()=>{
+    try{
+        const res =await axios ({
+            method:'GET',
+            url: "http://[::1]:3000/api/user/google",
+        });
+        
+    }catch(err){
+        console.log(err)
+    }
+}
+// login with google
+const googleBtn = document.querySelector('.sociallogin');
+googleBtn.addEventListener('click',_ =>{
+    loginGoogle()
+})

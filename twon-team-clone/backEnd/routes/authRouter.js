@@ -3,13 +3,18 @@ const express = require('express');
 const authController = require('../controller/authControllrt');
 const userController = require('../controller/userController');
 const router = express.Router();
+const passport = require('passport');
+
 
 router.post('/register',authController.signUp);
 router.post('/login',authController.login);
 router.post('/loginAdmin',authController.loginAdmin);
 router.post('/forgotpassword',authController.forgotPassword);
-
-; 
+// login by google
+router.get('/google',passport.authenticate('google',{
+    scope:['profile'],
+    state: true
+}))
 
 router.patch('/resetpassword/:token',authController.resetPassword);
 router.patch('/updateMyPassword',authController.protect,authController.updatePassword);

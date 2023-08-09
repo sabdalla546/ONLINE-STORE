@@ -26,8 +26,11 @@ process.on('uncaughtException', err => {
 const app = express();
 // conecction to database
 dbConection();  
+
 app.use(cors());
-app.options("*",cors())
+
+app.options("*",cors());
+
 app.use(morgan('dev'));
 // set security http headers
 app.use(helmet());
@@ -77,6 +80,8 @@ app.patch('/updateMyPassword',authRouter);
 app.patch('updateMe',authRouter);
 app.patch('deletMe',authRouter);
 app.get('/',authRouter);
+app.get('/google',authRouter);
+const passportSetup = require('./utilts/passport-setup');
 app.get('/:id',authRouter);
 app.get('/wishList',authRouter);
 app.post('/cart',authRouter);
