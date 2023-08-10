@@ -24,9 +24,9 @@
             <br>
             <div class="navsec">
                 <div class="navsec-t">Products</div>
-                <a class="navsec-a" href="/add.html">Add new product</a>
-                <a class="navsec-a" href="/products.html">Products</a>
-                <a class="navsec-a" href="/categories.html">Categories</a>
+                <a class="navsec-a" href="/ONLINE-STORE/twon-team-clone/frontEnd/TownTeam%20Admin%20Area/add.html">Add new product</a>
+                <a class="navsec-a" href="/ONLINE-STORE/twon-team-clone/frontEnd/TownTeam%20Admin%20Area/products.html">Products</a>
+                <a class="navsec-a" href="/ONLINE-STORE/twon-team-clone/frontEnd/TownTeam%20Admin%20Area/categories.html">Categories</a>
             </div>
             <!-- <br>
             <div class="navsec">
@@ -80,12 +80,12 @@
             <br><br>
 
 
-            <div class="categoriesview">
+            <div class="categoriesview" id="render-category">
                 
-                <div class="categoryitm">TShirt</div>
+               <!-- <div class="categoryitm">TShirt</div>
                 <div class="categoryitm">Short</div>
                 <div class="categoryitm">Socks</div>
-                <div class="categoryitm">Polo</div>
+                <div class="categoryitm">Polo</div> -->
 
             </div>
 
@@ -93,19 +93,20 @@
 
             <div id="addNewCat" class="addNewCat">
                 <button class="closebtn" onclick="closeCatBox()">X</button>
-                <form method="POST" name="form-example-1" id="form-example-1" class="addNewCate" enctype="multipart/form-data">
+                <form  name="form-example-1" id="form-example-1" class="addNewCate" enctype="multipart/form-data">
                     <div class="input-field">
                         <label for="name-1">Category Name</label>
-                        <input type="text" name="name-1" id="name-1">
+                        <input type="text" name="name-1" id="new-category">
                     </div>
-                    <div class="input-field">
+                   <!-- <div class="input-field">
                         <label for="description-1">Category Description</label>
                         <input type="text" name="description-1" id="description-1">
-                    </div>
-                    <button class="uploadproduct">Add Category</button>
+                    </div> -->
+                    <button class="uploadproduct" id="add-category">Add Category</button>
                 </form>
             </div>
-
+            
+           
             
 
 
@@ -115,8 +116,15 @@
 
         <br><br><br>
         
-
-
+        <div class="contenar-edit" id="contenar-edit">
+            <div class="edit-category-html">
+           
+                <input type="text" class="new-value">
+                <button id="save-category">save</button>
+           
+        </div>
+    
+        </div>
     </section>
 
 
@@ -127,7 +135,8 @@
 </body>
 
 
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.js"></script>
+<script src="./src/js/category.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 <script type="text/javascript" src="./src/image-uploader.min.js"></script>
 <script src="./main.js"></script>

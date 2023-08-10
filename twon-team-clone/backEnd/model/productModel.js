@@ -1,12 +1,12 @@
 const mongoose = require('mongoose');
-const slugify= require('slugify');
+//const slugify= require('slugify');
 const productSchema = new mongoose.Schema({
     title : {
         type: String,
         required:[true, 'product must have title'],
-        trim: true
+        //trim: true
     },
-    slug:String,
+   slug: String,
     description: {
         type: String,
         required:[true, 'product must have description'],
@@ -14,6 +14,10 @@ const productSchema = new mongoose.Schema({
     price: {
         type: Number,
         required: [true, 'product must have price'],
+    },
+    discount: {
+       type:Number,
+       
     },
     category: {
         type: String,
@@ -25,6 +29,7 @@ const productSchema = new mongoose.Schema({
     },
     images: {
         type:Array,
+       
     },
    
      sold: {
@@ -51,7 +56,8 @@ const productSchema = new mongoose.Schema({
     timestamps: true
 });
 productSchema.pre('save', function(next) {
-    this.slug = slugify(this.title, { lower: true });
+   // this.slug = slugify(this.title, { lower: true });
+    this.discount = this.price - this.price *0.2;
     next();
   });
 const Product = mongoose.model('Product',productSchema);

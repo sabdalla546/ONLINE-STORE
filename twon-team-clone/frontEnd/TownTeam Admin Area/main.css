@@ -250,7 +250,48 @@ p.productsdesc {
     background: #3333331f;
     border-radius: 10px;
 }
-
+.categoriesview .catergort-items{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.contenar-edit {
+    display: none;
+}
+.edit-category-html {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 60%;
+    height: 10%;
+    background-color: black;
+    position:absolute ;
+    left: 30%;
+    bottom:10%;
+}
+.catergort-items .edit-category{
+    background-color:green;
+    border: unset;
+    width: 3rem;
+    height: 1.5rem;
+    border-radius: 20px;
+}
+.catergort-items .delete-category{
+    background-color: red;
+    border: unset;
+    width: 3rem;
+    height: 1.5rem;
+    border-radius: 20px;
+}
+.edit-category-html input {
+    width: 60%;
+}
+.edit-category-html button{
+    width: 10%;
+    height: 2rem;
+    border: unset;
+    background-color: green;
+}
 
 .addNewCat {
     position: fixed;

@@ -6,7 +6,6 @@ var prodcategorySchema = new mongoose.Schema(
     title: {
       type: String,
       required: [true, "category must have title"],
-      unique: true,
       index: true,
     },
   },

@@ -2,6 +2,7 @@ const Product = require('../model/productModel');
 const AppError = require('../utilts/appError');
 const catchAsync = require('../utilts/catchAsync');
 const User = require('../model/userModel');
+
 exports.createProduct = catchAsync(async(req,res,next)=>{
     const newProduct = await Product.create(req.body);
     res.status(201).json({

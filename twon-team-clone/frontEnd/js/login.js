@@ -30,7 +30,7 @@ const loginGoogle = async()=>{
     try{
         const res =await axios ({
             method:'GET',
-            url: "http://[::1]:3000/api/user/google",
+            url: "http://localhost:3000/api/user/google",
         });
         
     }catch(err){
