@@ -86,6 +86,7 @@ exports.updateUser =  catchAsync(async (req,res,next)=>{
     const user = await User.findByIdAndUpdate(_id,{
         name: req?.body?.name,
         email: req?.body?.email,
+        role: req?.body?.email,
 
     },{
         new:true

@@ -183,8 +183,25 @@ overflow: hidden;
     animation-duration: 4s;
     animation-iteration-count: infinite;
 }
-
-
+.show-container{
+    display: none;
+}
+.show-categories {
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    background-color: black;
+    color: #fff;
+    z-index: 100;
+    width: 300px;
+    position: absolute;
+    top: 6.2rem;
+    right: 10rem;
+}
+.show-categories p {
+    margin: 1rem;
+    padding-left: 20px;
+}
 @keyframes rotate {
     from {transform: rotate(0deg);}
     to {transform: rotate(360deg)}

@@ -14,7 +14,7 @@ const xss = require('xss-clean');
 const hpp = require('hpp');
 const morgan = require('morgan');
 const cookieParser = require('cookie-parser');
-
+const passportSetup = require('./utilts/passport-setup');
 
 process.on('uncaughtException', err => {
     console.log(err.name, err.message);
@@ -81,7 +81,8 @@ app.patch('updateMe',authRouter);
 app.patch('deletMe',authRouter);
 app.get('/',authRouter);
 app.get('/google',authRouter);
-const passportSetup = require('./utilts/passport-setup');
+
+app.post('/createUserorAdmin',authRouter)
 app.get('/:id',authRouter);
 app.get('/wishList',authRouter);
 app.post('/cart',authRouter);

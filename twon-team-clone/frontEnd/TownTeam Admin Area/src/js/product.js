@@ -11,6 +11,8 @@ async function fetch(method,url,data={}){
         console.log(err)
     }
     };
+
+    
 (async function getAllProduct(){
    const res= await fetch('GET',"http://[::1]:3000/api/product/");
    //console.log(res.data.data.products);
@@ -48,4 +50,5 @@ async function fetch(method,url,data={}){
     })
    }
    console.log(deletProduct);
-})()
+})();
+

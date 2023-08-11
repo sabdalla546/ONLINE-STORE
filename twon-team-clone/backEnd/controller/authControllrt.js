@@ -68,6 +68,17 @@ exports.loginAdmin = catchAsync(async (req,res,next)=>{
   }
  createSendToken(admin, 200,res);
 }); 
+
+// create user or admin
+exports.createUserOrAdmin= catchAsync(async(req,res,next)=>{
+  const newPerson = await User.create(req.body);
+  res.status(201).json({
+      status: 'success',
+      data: {
+        user: newPerson,
+      }
+    });
+});
 // verfiy token 
 exports.protect = catchAsync(async (req, res, next) => {
     // 1)getting token and check of it's there

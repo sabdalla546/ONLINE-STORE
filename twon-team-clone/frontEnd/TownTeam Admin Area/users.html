@@ -66,50 +66,62 @@
 
         <div class="bodyMain">
             <br><br>
-
-
             <div class="flex">
                 <div class="flex2">
                     <h2 class="maintitle">Current Categories</h2>
                     <p class="desc">Let’s see your current Categories in store</p>
                 </div>
-                <a onclick="showCatBox()" class="editbtn">Add New Category</a>
+                <a onclick="showCatBox()" class="editbtn">Add New user or admin</a>
             </div>
-
-
 
             <br><br>
 
 
-            <div class="categoriesview" id="render-category">
+            <div class="productsview" id="userview">
                 
-               <!-- <div class="categoryitm">TShirt</div>
-                <div class="categoryitm">Short</div>
-                <div class="categoryitm">Socks</div>
-                <div class="categoryitm">Polo</div> -->
+               <div class="productone">
+                    <div class="productonedata">     
+                       
+                        <div class="productdeta">
+                            <h3 class="productstitle">name</h3>
+                            <p class="productsdesc">email</p>
+                        </div> 
+                    </div>    
+                    <div>
+                        <a class="editbtn">Delete</a> 
+                        <a class="editbtn">Edit</a> 
+                    </div>  
+                </div>
 
             </div>
-
-
+            
 
             <div id="addNewCat" class="addNewCat">
                 <button class="closebtn" onclick="closeCatBox()">X</button>
                 <form  name="form-example-1" id="form-example-1" class="addNewCate" enctype="multipart/form-data">
                     <div class="input-field">
-                        <label for="name-1">Category Name</label>
-                        <input type="text" name="name-1" id="new-category">
+                        <label for="name-1">user Name</label>
+                        <input type="text" name="name-1" id="user-name">
+                    </div>
+                    <div class="input-field">
+                        <label for="name-1">user email</label>
+                        <input type="text" name="name-1" id="user-email">
+                    </div>
+                    <div class="input-field">
+                        <label for="name-1">role</label>
+                        <input type="text" name="name-1" id="role">
+                    </div>
+                    <div class="input-field">
+                        <label for="name-1">password</label>
+                        <input type="password" name="name-1" id="pass">
                     </div>
                    <!-- <div class="input-field">
                         <label for="description-1">Category Description</label>
                         <input type="text" name="description-1" id="description-1">
                     </div> -->
-                    <button class="uploadproduct" id="add-category">Add Category</button>
+                    <button class="uploadproduct" id="add-user">Add user</button>
                 </form>
             </div>
-            
-           
-            
-
 
         </div>
 
@@ -117,15 +129,8 @@
 
         <br><br><br>
         
-        <div class="contenar-edit" id="contenar-edit">
-            <div class="edit-category-html">
-           
-                <input type="text" class="new-value">
-                <button id="save-category">save</button>
-           
-        </div>
-    
-        </div>
+
+
     </section>
 
 
@@ -135,9 +140,8 @@
 
 </body>
 
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.js"></script>
-<script src="./src/js/category.js"></script>
+<script src="./src//js//users.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 <script type="text/javascript" src="./src/image-uploader.min.js"></script>
 <script src="./main.js"></script>
