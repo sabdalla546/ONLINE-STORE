@@ -8,10 +8,16 @@ const login = async(email,password)=>{
                 password
             }
         });
+        //console.log(res.data.user)
         if(res.data.status=== 'success'){
-           window.setTimeout(()=>{
-            window.location.replace('/ONLINE-STORE/twon-team-clone/frontEnd/index.html');
-           },1500);
+            if(res.data.data.user.role == 'admin' || res.data.user.role == 'super admin'){
+                window.location.replace('/ONLINE-STORE/twon-team-clone/frontEnd/TownTeam%20Admin%20Area/index.html');
+            }else{
+               
+                    window.location.replace('/ONLINE-STORE/twon-team-clone/frontEnd/index.html');
+                  
+            }
+          
         }
         console.log(res);
     }catch(err){
