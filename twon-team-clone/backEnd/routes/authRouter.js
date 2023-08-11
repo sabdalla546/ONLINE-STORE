@@ -23,9 +23,9 @@ router.patch('/updateMe', authController.protect,userController.updateMe)
 router.delete('/deletMe', authController.protect,userController.deleteMe);
 
 router. 
-    route('/').get(/*authController.protect,*/userController.getAllUsers);
+    route('/').get(authController.protect,authController.isAdmin,userController.getAllUsers);
 router. 
-    route('/createUserorAdmin').post(/*authController.protect,*/authController.createUserOrAdmin);
+    route('/createUserorAdmin').post(authController.protect,authController.isSuberAdmin,authController.createUserOrAdmin);
 router.get('/wishList',authController.protect,userController.getWishList);
 router.put('/saveAddress',authController.protect,userController.saveAddress);
 

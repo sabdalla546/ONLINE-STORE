@@ -224,7 +224,7 @@ exports.isAdmin = catchAsync(async(req,res,next)=>{
     const {email} = req.user;
     const admin = await User.findOne({email});
    // console.log(admin)
-    if(admin.role !== 'Admin') {
+    if(admin.role !== 'Admin' || admin.role !== 'suber admin') {
         new AppError('you are not a Admin', 401);
     }
     next();
@@ -233,7 +233,7 @@ exports.isSuberAdmin = catchAsync(async(req,res,next)=>{
     const {email} = req.user.email;
     const admin = await User.findOne({email});
     
-    if(admin.role !== 'suberAdmin') {
+    if(admin.role !== 'suber admin') {
         new AppError('you are not a Super Admin', 401);
     }
     next();
