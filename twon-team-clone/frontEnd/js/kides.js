@@ -3,15 +3,22 @@ async function fetch(method,url,data={}){
         const res =await axios ({
             method:method,
             url: url,
-            data:data
+            data:data,
+            
+                headers: { 
+                    Authorization: `Bearer ${localStorage.getItem('user-token')}`
+                
+                }
+              
         });
-       //console.log(catId);
+          
+      
+
         return res;
     }catch(err){
         console.log(err)
     }
     };
-    
     (async function getAllProduct(){
         const res= await fetch('GET',"http://[::1]:3000/api/product/?category=kides");
         //console.log(res.data.data.products);
@@ -22,7 +29,7 @@ async function fetch(method,url,data={}){
              <div id="productone" class="productone showimg2">
              <em id="productDiscount" class="productDiscount">50%</em>
              <div class="addtofav" id="addtofav" onclick="addToFav()">
-                 <span id="addtofavicn" class="material-symbols-outlined favicn">favorite</span>
+                 <span id="addtofavicn" class="material-symbols-outlined favicn" product-id='${res.data.data.products[i]._id}'>favorite</span>
              </div>
              <img class="productimg shown" src="../../../../ONLINE-STORE/twon-team-clone/frontEnd/${res.data.data.products[i].images[0]}">
             
@@ -48,3 +55,15 @@ async function fetch(method,url,data={}){
         document.getElementById('productsArea').innerHTML= content;
         
      })();   
+ 
+     
+     document.getElementById('productsArea').addEventListener('click',async e=>{
+        //console.log(e.target.innerText)
+         if(e.target.innerText === 'favorite'){
+            const productId=e.target.getAttribute('product-id');
+            console.log(productId);
+             await fetch('PUT','http://[::1]:3000/api/product/wishlist',{prodId:productId});
+             res= await fetch('GET','http://[::1]:3000/api/user/wishList');
+             console.log(res)
+         }
+      })

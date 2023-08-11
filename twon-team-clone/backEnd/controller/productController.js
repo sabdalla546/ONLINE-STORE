@@ -114,7 +114,7 @@ exports.addToWishList = catchAsync(async(req,res,next)=>{
   if(!user){
     return next(new AppError('No user found with that ID', 404));
   }
-  const alreadyadded = user.wishList.find((id) => id.toString() === prodId);
+  const alreadyadded = user.wishList.find((id) => id === prodId);
   if (alreadyadded) {
     let user = await User.findByIdAndUpdate(
       _id,

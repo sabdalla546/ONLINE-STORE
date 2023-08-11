@@ -19,27 +19,27 @@ async function fetch(method,url,data={}){
         console.log(err)
     }
     };
-    
+
     (async function getAllProduct(){
-        const res= await fetch('GET',"http://[::1]:3000/api/product/?category=men");
+        const res= await fetch('GET',"http://[::1]:3000/api/user/wishList");
         //console.log(res.data.data.products);
-        console.log(res.data.data.products[0].images[0])
+        console.log(res.data.wishList)
         let content ='';
-        for(let i=0 ;i < res.data.data.products.length; i++){
+        for(let i=0 ;i < res.data.wishList.length; i++){
              content+= `
              <div id="productone" class="productone showimg2">
              <em id="productDiscount" class="productDiscount">50%</em>
              <div class="addtofav" id="addtofav" onclick="addToFav()">
-                 <span id="addtofavicn" class="material-symbols-outlined favicn" product-id='${res.data.data.products[i]._id}' >favorite</span>
+                 <span id="addtofavicn" class="material-symbols-outlined favicn" product-id='${res.data.wishList[i]._id}'>favorite</span>
              </div>
-             <img class="productimg shown" src="../../../../ONLINE-STORE/twon-team-clone/frontEnd/${res.data.data.products[i].images[0]}">
+             <img class="productimg shown" src="../../../../ONLINE-STORE/twon-team-clone/frontEnd/${res.data.wishList[i].images[0]}">
             
              <div class="productDetails">
-                 <p class="productName">${res.data.data.products[i].title}</p>
-                 <em class="productSKU">${res.data.data.products[i].description}</em>
+                 <p class="productName">${res.data.wishList[i].title}</p>
+                 <em class="productSKU">${res.data.wishList[i].description}</em>
                  <div id="productPrice">
-                     <span id="currentPrice">LE ${res.data.data.products[i].discount}</span>
-                     <span id="OldPrice">LE ${res.data.data.products[i].price}</span>
+                     <span id="currentPrice">LE ${res.data.wishList[i].discount}</span>
+                     <span id="OldPrice">LE ${res.data.wishList[i].price}</span>
                  </div>
                  <div id="productRating">
                      <span class="material-symbols-outlined ratingfull">star</span>
@@ -55,13 +55,4 @@ async function fetch(method,url,data={}){
         }
         document.getElementById('productsArea').innerHTML= content;
         
-     })();   
-     document.getElementById('productsArea').addEventListener('click',async e=>{
-        //console.log(e.target.innerText)
-         if(e.target.innerText === 'favorite'){
-            const productId=e.target.getAttribute('product-id');
-             await fetch('PUT','http://[::1]:3000/api/product/wishlist',{prodId:productId});
-             res= await fetch('GET','http://[::1]:3000/api/user/wishList');
-             console.log(res)
-         }
-      })
+     })(); 

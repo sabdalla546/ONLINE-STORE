@@ -8,9 +8,10 @@ const login = async(email,password)=>{
                 password
             }
         });
-        //console.log(res.data.user)
+         
         if(res.data.status=== 'success'){
-            if(res.data.data.user.role == 'admin' || res.data.user.role == 'super admin'){
+            localStorage.setItem('user-token',res.data.token);
+            if(res.data.data.user.role === 'admin' || res.data.data.user.role === 'super admin'){
                 window.location.replace('/ONLINE-STORE/twon-team-clone/frontEnd/TownTeam%20Admin%20Area/index.html');
             }else{
                
